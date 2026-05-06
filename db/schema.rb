@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2026_05_06_083152) do
+ActiveRecord::Schema[7.1].define(version: 2026_05_06_121322) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -32,6 +32,7 @@ ActiveRecord::Schema[7.1].define(version: 2026_05_06_083152) do
     t.date "end_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["start_date", "end_date"], name: "index_monthly_statistics_on_start_date_and_end_date", unique: true
   end
 
   create_table "results", force: :cascade do |t|
