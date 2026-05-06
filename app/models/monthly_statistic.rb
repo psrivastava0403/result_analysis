@@ -1,0 +1,2 @@
+class MonthlyStatistic < ApplicationRecord
+end

@@ -45,3 +45,8 @@ group :development do
   # gem "spring"
 end
 
+gem 'sidekiq'
+gem 'redis'
+gem 'rspec-rails'
+gem 'factory_bot_rails'
+gem 'faker'
