@@ -6,6 +6,7 @@ class DailyStatisticsJob < ApplicationJob
     results = Result.where(taken_at: date.beginning_of_day..date.end_of_day)
 
     results.group_by(&:subject).each do |subject, records|
+      next if records.blank?
       marks = records.map(&:marks)
 
       DailyStatistic.create!(
