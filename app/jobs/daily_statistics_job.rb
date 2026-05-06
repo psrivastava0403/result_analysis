@@ -5,10 +5,10 @@ class DailyStatisticsJob < ApplicationJob
     # Do something later
     results = Result.where(taken_at: date.beginning_of_day..date.end_of_day)
 
-    results.group(:subject).each do |subject, records|
+    results.group_by(&:subject).each do |subject, records|
       marks = records.map(&:marks)
 
-      DailyStatistics.create!(
+      DailyStatistic.create!(
         date: date,
         subject: subject,
         daily_low: marks.min,

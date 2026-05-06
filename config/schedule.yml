@@ -1,0 +1,7 @@
+daily_job:
+  cron: "0 18 * * *"
+  class: "DailyStatisticsJob"
+
+monthly_job:
+  cron: "0 0 * * 1"
+  class: "MonthlyStatisticsJob"
